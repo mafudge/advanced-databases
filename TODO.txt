@@ -1,7 +1,5 @@
-SETUP Kafka Connectors
-
-https://docs.confluent.io/home/connect/kafka_connectors.html
 
 
-Get MSSQL Import / exports working in Spark
-
+net stop winnat
+docker-compose up -d
+net start winnat 
