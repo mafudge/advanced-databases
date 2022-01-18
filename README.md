@@ -66,5 +66,13 @@ When things go wrong with a service (and you can count on that happening), you w
 Searching the web for the error in the log usually gives you an indication as to what is going awry.
 
 
+### Login Credentials for Services
+
+Check the `docker-compose.yaml` file for the credentials for each service.
 
 
+### Updating the git repository.
+
+At times you may need to update the git repository. For example, if your instructor makes changes the content or examples. To get the latest updates:
+
+`$ git pull`

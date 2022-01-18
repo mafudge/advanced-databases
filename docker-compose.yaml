@@ -152,12 +152,14 @@ services:
 
   #mssql#
   mssql:
-    image: mcr.microsoft.com/azure-sql-edge:latest
+    #image: mcr.microsoft.com/azure-sql-edge:latest
+    image: mcr.microsoft.com/mssql/server:2019-latest
     cap_add: [ 'SYS_PTRACE' ]
     hostname: mssql
     environment:
       - "ACCEPT_EULA=Y"
-      - "SA_PASSWORD=SU2Orange!"
+      - "SA_PASSWORD=SU2orange!"
+      - "MSSQL_TELEMETRY_ENABLED=false"
     ports:
       - "1433:1433"
     volumes:
