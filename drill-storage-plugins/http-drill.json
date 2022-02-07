@@ -1,0 +1,91 @@
+{
+  "type": "http",
+  "connections": {
+    "sunrise": {
+      "url": "https://api.sunrise-sunset.org/json",
+      "method": "GET",
+      "headers": null,
+      "authType": "none",
+      "userName": null,
+      "password": null,
+      "postBody": null,
+      "params": [
+        "lat",
+        "lng",
+        "date"
+      ],
+      "dataPath": "results",
+      "requireTail": false,
+      "inputType": "json",
+      "xmlDataLevel": 1
+    },
+    "jsonsamples": {
+      "url": "https://raw.githubusercontent.com/mafudge/advanced-databases/main/datasets/json-samples/",
+      "method": "GET",
+      "headers": null,
+      "authType": "none",
+      "userName": null,
+      "password": null,
+      "postBody": null,
+      "params": null,
+      "dataPath": null,
+      "requireTail": true,
+      "inputType": "json",
+      "xmlDataLevel": 1
+    },
+    "weather_daily": {
+      "url": "https://api.openweathermap.org/data/2.5/onecall",
+      "method": "GET",
+      "headers": null,
+      "authType": "none",
+      "userName": null,
+      "password": null,
+      "postBody": null,
+      "params": [
+        "lat",
+        "lon",
+        "appid",
+        "units"
+      ],
+      "dataPath": "daily",
+      "requireTail": false,
+      "inputType": "json",
+      "xmlDataLevel": 1
+    },
+    "weather_hourly": {
+      "url": "https://api.openweathermap.org/data/2.5/onecall",
+      "method": "GET",
+      "headers": null,
+      "authType": "none",
+      "userName": null,
+      "password": null,
+      "postBody": null,
+      "params": [
+        "lat",
+        "lon",
+        "appid",
+        "units"
+      ],
+      "dataPath": "hourly",
+      "requireTail": false,
+      "inputType": "json",
+      "xmlDataLevel": 1
+    },
+    "stocks": {
+      "url": "https://raw.githubusercontent.com/mafudge/datasets/master/stocks/stocks.json",
+      "method": "GET",
+      "headers": null,
+      "authType": "none",
+      "userName": null,
+      "password": null,
+      "postBody": null,
+      "params": null,
+      "dataPath": null,
+      "requireTail": false,
+      "inputType": "json",
+      "xmlDataLevel": 1
+    }
+  },
+  "proxyType": "direct",
+  "enabled": true
+}

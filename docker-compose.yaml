@@ -17,6 +17,8 @@ services:
       memlock: -1
       nproc: 32768
       nofile: 100000
+    volumes: 
+      - ./datasets:/home/jovyan/datasets
 
   #jupyter#
   jupyter:
