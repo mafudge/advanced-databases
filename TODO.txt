@@ -1,5 +1,5 @@
 Troubleshooting?
 
 net stop winnat
-docker-compose up -d
+docker-compose start ...,.
 net start winnat 
