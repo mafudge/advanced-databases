@@ -205,7 +205,7 @@ def generateRandomTweet():
             tweet =  { 
                 "id" : str(id), 
                 "timestamp" : now, 
-                "timestamp_format" : time.strftime('%Y-%m-%d %H:%M:%S', now),  
+                "timestamp_format" : time.strftime('%Y-%m-%dT%H:%M:%S', now),  
                 "date" : time.strftime('%Y-%m-%d', now), 
                 "time" : time.strftime('%H:%M:%S', now),
                 "user" : user['name'],
