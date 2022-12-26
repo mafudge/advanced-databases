@@ -41,7 +41,6 @@ services:
   mongoexpress:
     image: mongo-express:latest
     hostname: mongoexpress
-    restart: always
     ports:
       - 8881:8081
     environment:
@@ -55,7 +54,6 @@ services:
   rediscommander:
     image: rediscommander/redis-commander
     hostname: rediscommander
-    restart: always 
     environment: 
       REDIS_PORT: "6379"
       REDIS_HOST: "redis" 
@@ -140,8 +138,7 @@ services:
 
   #mongo#
   mongo:
-    image: mongo:latest
-    restart: always
+    image: mongo:4.4
     hostname: mongo
     ports:
       - 27017:27017
@@ -421,7 +418,6 @@ services:
   #mongoapp#
   mongoapp:
     image: mafudge/mongoapp:20211116a
-    restart: always
     ports:
       - 5081:5000
     environment:
