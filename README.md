@@ -20,7 +20,7 @@ Download the images:
 `$ docker-compose pull`  
 
 Create the services:  
-`$ docker-compose create`
+`$ docker-compose up --no-start`
 
 ## Common Tasks
 
