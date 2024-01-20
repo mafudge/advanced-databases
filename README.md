@@ -1,26 +1,42 @@
 # advanced-databases
 
-Lab environment for the Advanced Databases / Hadoop / NoSQL course
-
+A Lab environment for the Advanced Databases / Hadoop / NoSQL course
 
 ## Requirements
 
 Before you gawk at the requirements, let's not forget that you're running big data systems on your computer :-)
 
-- Windows / Linux / Mac with Intel Hardware virtualization
-- Docker Desktop 4.3 or on Linux Docker 20.10 
+- Windows OS 10 or higher / Linux / Mac OS with Intel Hardware virtualization
+- Docker Desktop https://www.docker.com/products/docker-desktop/
 - 16GB RAM
 - 40GB free space for docker images and the datasets
 
-## Before You Begin
+##  Setting it up
 
-There's one-time prep you must do after cloning the git repository.  Have dinner or go for a walk, as it can take some time to clone the images.
+Docker Desktop:
+1. Download and install Docker Desktop https://www.docker.com/products/docker-desktop/
+1. On Mac OS: Go to settings and make sure "Use Rosetta for x86/amd66 emulation on Apple Silicon" and "Use Virtualization Framework" are enabled.
+1. Restart docker desktop
+1. Make sure the docker engine is running.
 
-Download the images:     
-`$ docker-compose pull`  
+Install Git:
+1. Download and install git: https://git-scm.com/ 
 
-Create the services:  
-`$ docker-compose up --no-start`
+Clone the this repository
+1. Open a terminal to access the command-line interface of your operating system. Know the folder you are in! Its located in the command prompt
+1. Clone this repository. From the terminal command line, type:  
+`> git clone https://github.com/mafudge/advanced-databases`
+1. Change into the cloned folder:  
+`> cd advanced-databases`
+Your command line prompt should now reflect the new folder e.g.:
+`advanced-databases>`
+1. Download the images used in the docker setup:   
+`advanced-databases> docker-compose pull`   
+This will take a while, so be patient. 
+1. Create the containers, but don't start them:  
+`advanced-databases> docker-compose up --no-start`   
+
+You are now ready to use the lab environment!
 
 ## Common Tasks
 

@@ -44,6 +44,8 @@ services:
     ports:
       - 8881:8081
     environment:
+      ME_CONFIG_BASICAUTH_USERNAME : admin
+      ME_CONFIG_BASICAUTH_PASSWORD: mongopw
       ME_CONFIG_MONGODB_ADMINUSERNAME: admin
       ME_CONFIG_MONGODB_ADMINPASSWORD: mongopw
       ME_CONFIG_MONGODB_URL: mongodb://admin:mongopw@mongo:27017/
@@ -87,7 +89,7 @@ services:
 
   #elasticsearch#
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.16
     hostname: elasticsearch
     environment:
       - node.name=elasticsearch
@@ -109,7 +111,7 @@ services:
 
   #kibana#
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.15.0
+    image: docker.elastic.co/kibana/kibana:7.17.16
     hostname: kibana
     ports:
       - 5601:5601
