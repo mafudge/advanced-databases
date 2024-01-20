@@ -6,7 +6,7 @@ services:
   ### clients ###  
   #drill#
   drill:
-    image: apache/drill:1.19.0
+    image: apache/drill:1.21.1
     hostname: drill
     command: /bin/bash
     tty: true
@@ -151,8 +151,8 @@ services:
 
   #mssql#
   mssql:
-    #image: mcr.microsoft.com/azure-sql-edge:latest
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    #image: mcr.microsoft.com/mssql/server:2019-latest
     cap_add: [ 'SYS_PTRACE' ]
     hostname: mssql
     environment:
