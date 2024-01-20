@@ -66,7 +66,7 @@ services:
   ### database servers ###  
   #cassandra#
   cassandra:
-    image: cassandra:3.11.11
+    image: cassandra:3.11.16
     hostname: cassandra
     ports:
     - 9042:9042
