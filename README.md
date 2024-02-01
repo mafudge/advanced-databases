@@ -1,6 +1,11 @@
-# advanced-databases
+# Advanced - Databases
 
-A Lab environment for the Advanced Databases / Hadoop / NoSQL course
+A Lab environment for Big Data / NoSQL.
+
+All of the joy of Bigdata/noSQL with little of the pain. Used in IST769 the advanced databases course.
+
+[![DOI](https://zenodo.org/badge/445371462.svg)](https://zenodo.org/doi/10.5281/zenodo.10607506)
+
 
 ## Requirements
 
