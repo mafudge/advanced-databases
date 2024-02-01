@@ -6,7 +6,6 @@ All of the joy of Bigdata/noSQL with little of the pain. Used in IST769 the adva
 
 [![DOI](https://zenodo.org/badge/445371462.svg)](https://zenodo.org/doi/10.5281/zenodo.10607506)
 
-
 ## Requirements
 
 Before you gawk at the requirements, let's not forget that you're running big data systems on your computer :-)
