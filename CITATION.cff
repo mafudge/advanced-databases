@@ -4,8 +4,8 @@ authors:
 - family-names: "Fudge"
   given-names: "Michael"
   orcid: "https://orcid.org/0009-0006-2760-9360"
-title: "A Spark Cluster in Docker"
-version: v1.0.0
-doi: 10.5281/zenodo.10607278
+title: "Advanced Databases: A Bigdata / NoSQL lab environment."
+version: sp24
+doi: 10.5281/zenodo.10607506
 date-released: 2024-02-01
-url: "https://github.com/mafudge/docker-spark-cluster"
+url: "https://github.com/mafudge/advanced-databases"
