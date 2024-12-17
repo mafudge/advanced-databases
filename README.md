@@ -21,7 +21,7 @@ Before you gawk at the requirements, let's not forget that you're running big da
 
 Docker Desktop:
 1. Download and install Docker Desktop https://www.docker.com/products/docker-desktop/
-1. On Mac OS: Go to settings and make sure "Use Rosetta for x86/amd66 emulation on Apple Silicon" and "Use Virtualization Framework" are enabled.
+1. On Mac OS: Go to settings and make sure "Use Rosetta for x86/amd64 emulation on Apple Silicon" and "Use Virtualization Framework" are enabled.
 1. Restart docker desktop
 1. Make sure the docker engine is running.
 
