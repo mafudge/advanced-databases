@@ -1,12 +1,10 @@
-version: '3'
-
 ##### services #####
 services:
 
   ### clients ###  
   #drill#
   drill:
-    image: apache/drill:1.21.1
+    image: docker.io/apache/drill:1.21.2
     hostname: drill
     command: /bin/bash
     tty: true
@@ -20,9 +18,21 @@ services:
     volumes: 
       - ./datasets:/home/jovyan/datasets
 
+  # # trino #
+  # trino:
+  #   image: docker.io/trinodb/trino:latest
+  #   hostname: trino
+  #   ports:
+  #     - "8080:8080"
+  #   env_file:
+  #     - ./hadoop-hive.env      
+
   #jupyter#
   jupyter:
-    image: ist769/jupyter_pyspark:20210924b 
+    build: 
+      context: ./jupyter
+      dockerfile: Dockerfile
+    #image: quay.io/jupyter/pyspark-notebook:spark-3.5.3
     hostname: jupyter
     environment:
       - GRANT_SUDO=yes
@@ -39,7 +49,7 @@ services:
 
   #mongoexpress#
   mongoexpress:
-    image: mongo-express:latest
+    image: docker.io/mongo-express:latest
     hostname: mongoexpress
     ports:
       - 8881:8081
@@ -54,7 +64,7 @@ services:
 
   #rediscommander#
   rediscommander:
-    image: rediscommander/redis-commander
+    image: docker.io/rediscommander/redis-commander:latest
     hostname: rediscommander
     environment: 
       REDIS_PORT: "6379"
@@ -68,7 +78,7 @@ services:
   ### database servers ###  
   #cassandra#
   cassandra:
-    image: cassandra:3.11.16
+    image: docker.io/cassandra:4.1.7 #3.11.16
     hostname: cassandra
     ports:
     - 9042:9042
@@ -89,7 +99,7 @@ services:
 
   #elasticsearch#
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.16
+    image: docker.io/elastic/elasticsearch:8.17.0 # 7.17.16
     hostname: elasticsearch
     environment:
       - node.name=elasticsearch
@@ -111,7 +121,7 @@ services:
 
   #kibana#
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.17.16
+    image: docker.io/elastic/kibana:8.17.0 #7.17.16
     hostname: kibana
     ports:
       - 5601:5601
@@ -126,7 +136,7 @@ services:
 
   #minio#
   minio:
-    image: minio/minio:RELEASE.2023-02-10T18-48-39Z
+    image: docker.io/minio/minio:RELEASE.2024-12-13T22-19-12Z # RELEASE.2023-02-10T18-48-39Z
     hostname: minio
     command: server /data --console-address ":9001"
     ports:
@@ -140,7 +150,7 @@ services:
 
   #mongo#
   mongo:
-    image: mongo:6.0
+    image: docker.io/mongo:6.0
     hostname: mongo
     ports:
       - 27017:27017
@@ -168,7 +178,7 @@ services:
 
   # neo4j#
   neo4j:
-    image: neo4j:5.15
+    image: docker.io/neo4j:5.26 #5.15
     hostname: neo4j
     ports:
       - "7474:7474" #http
@@ -187,7 +197,7 @@ services:
 
   #redis#
   redis:
-    image: redis:7
+    image: docker.io/redis:7.4
     hostname: redis
     ports:
       - "6379:6379"
@@ -258,7 +268,7 @@ services:
 
   #kafka#
   zookeeper:
-    image: confluentinc/cp-zookeeper:6.2.0
+    image: confluentinc/cp-zookeeper:7.8.0 # 6.2.0
     hostname: zookeeper
     ports:
       - "2181:2181"
@@ -266,7 +276,7 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
   broker:
-    image: confluentinc/cp-server:6.2.0
+    image: confluentinc/cp-server:7.8.0 #6.2.0
     hostname: broker
     depends_on:
       - zookeeper
@@ -293,7 +303,7 @@ services:
       CONFLUENT_METRICS_ENABLE: 'true'
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
   schema-registry:
-    image: confluentinc/cp-schema-registry:6.2.0
+    image: confluentinc/cp-schema-registry:7.8.0 #6.2.0
     hostname: schema-registry
     depends_on:
       - broker
@@ -333,7 +343,7 @@ services:
       CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
       CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR
   control-center:
-    image: confluentinc/cp-enterprise-control-center:6.2.0
+    image: confluentinc/cp-enterprise-control-center:7.8.0 #6.2.0
     hostname: control-center
     depends_on:
       - broker
@@ -354,7 +364,7 @@ services:
       CONFLUENT_METRICS_TOPIC_REPLICATION: 1
       PORT: 9021
   ksqldb-server:
-    image: confluentinc/cp-ksqldb-server:6.2.0
+    image: confluentinc/cp-ksqldb-server:7.8.0 #6.2.0
     hostname: ksqldb-server
     depends_on:
       - broker
@@ -375,7 +385,7 @@ services:
       KSQL_KSQL_LOGGING_PROCESSING_TOPIC_AUTO_CREATE: 'true'
       KSQL_KSQL_LOGGING_PROCESSING_STREAM_AUTO_CREATE: 'true'
   ksqldb-cli:
-    image: confluentinc/cp-ksqldb-cli:6.2.0
+    image: confluentinc/cp-ksqldb-cli:7.8.0 #6.2.0
     hostname: ksqldb-cli
     depends_on:
       - broker
@@ -384,7 +394,7 @@ services:
     entrypoint: /bin/sh
     tty: true
   ksql-datagen:
-    image: confluentinc/ksqldb-examples:6.2.0
+    image: confluentinc/ksqldb-examples:7.8.0 #6.2.0
     hostname: ksql-datagen
     depends_on:
       - ksqldb-server
@@ -404,7 +414,7 @@ services:
       STREAMS_SCHEMA_REGISTRY_HOST: schema-registry
       STREAMS_SCHEMA_REGISTRY_PORT: 8081
   rest-proxy:
-    image: confluentinc/cp-kafka-rest:6.2.0
+    image: confluentinc/cp-kafka-rest:7.8.0 #6.2.0
     depends_on:
       - broker
       - schema-registry

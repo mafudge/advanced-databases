@@ -1,8 +1,0 @@
-
-TODO:
-
-[ ] Upgrade to latest spark version
-[ ] Upgrade databases to latest versions
-[ ] Get delta configured, add lession to object storage?
-[ ] Make a branch by semester for the newer versions 
-
