@@ -21,7 +21,7 @@ USER jovyan
 # pip installs
 RUN pip install --upgrade --user rise folium selenium plotly chart-studio seaborn \
     minio import-ipynb markdown xlrd pycode-similar polars duckdb ipynb_path \
-    beautifulsoup4 zss lxml geocoder openai redis 
+    beautifulsoup4 zss lxml geocoder openai redis confluent-kafka
     
 # pip install jupyterlab extensions and server extensions
 RUN pip install --user jupyterlab_rise jupyterlab-lsp ipylab \ 

@@ -128,7 +128,7 @@ services:
     environment:
       ELASTICSEARCH_URL: http://elasticsearch:9200
       ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
-      ELASTICSEARCH_USERNAME: elastic
+      ELASTICSEARCH_USERNAME: eadmin
       ELASTICSEARCH_PASSWORD: SU2orange!
       SERVER_SSL_ENABLED: "false"
     depends_on:

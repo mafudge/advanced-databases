@@ -13,7 +13,9 @@ Before you gawk at the requirements, let's not forget that you're running big da
 - Windows OS 10 or higher / Linux / Mac OS with Intel Hardware virtualization
 - Docker Desktop https://www.docker.com/products/docker-desktop/
 - 16GB RAM
-- 40GB free space for docker images and the datasets
+- 50GB free space for docker images and the datasets
+
+**IF YOU DON'T MEET THESE REQUIREMENTS, YOU GOING TO HAVE A BAD EXPERIENCE IN THIS COURSE. PERIOD.**
 
 ##  Setting it up
 
@@ -34,11 +36,11 @@ Clone the this repository
 `> cd advanced-databases`
 Your command line prompt should now reflect the new folder e.g.:
 `advanced-databases>`
-1. Download the images used in the docker setup:   
-`advanced-databases> docker-compose pull`   
-This will take a while, so be patient. 
+1. Download the images used in the docker setup:  
+`advanced-databases> docker-compose pull`
+This will take a while, so be patient.
 1. Create the containers, but don't start them:  
-`advanced-databases> docker-compose up --no-start`   
+`advanced-databases> docker-compose up --no-start`
 
 You are now ready to use the lab environment!
 
@@ -46,7 +48,7 @@ You are now ready to use the lab environment!
 
 ### Starting Services 
 
-Use `docker-compose start <services>` to start the services you need. As a best practice, start only the services you need. The required services are listed in the problem set / lab instruction document.    
+Use `docker-compose start <services>` to start the services you need. As a best practice, start only the services you need. The required services are listed in the problem set / lab instruction document.
 For example, to start the `jupyter`, `drill` and `minio` services for the minio lab:
 `$ docker-compose start jupyter drill minio`
 

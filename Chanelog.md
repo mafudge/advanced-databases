@@ -21,15 +21,15 @@
 [ ] Tests Matrix
 
 | System | Spark | Drill | Notes |
-| ----- | ----- | ----- | ----- | 
+| ----- | ----- | ----- | ----- |
 | Hadoop/Hive/HDFS | ✅ | N/a | Hadoop 3.3.4 |
 | minio | ✅ | ✅ | |
 | Mongo | ✅ | ✅ | |
-| Cassandra | ? | ? | |
-| Redis | ? | ? | |
-| Neo4j | ? | ? | |
-| Elasticsearch | ? | ? | |
-| Kafka | ? | ? | |
+| Cassandra | ✅ | ✅ | |
+| Redis | ✅ | N/a | |
+| Neo4j | ✅ | N/a | |
+| Elasticsearch | ✅ | ✅ | |
+| Kafka | ✅ | ✅ | |
 | Iceberg (new) | ? | ? | |
 
 [ ] Update Docker instructions

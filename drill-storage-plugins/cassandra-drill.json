@@ -1,6 +1,6 @@
 {
     "type": "cassandra",
-    "host": "cassandra0",
+    "host": "cassandra",
     "port": 9042,
     "enabled": true
   }
