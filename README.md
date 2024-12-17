@@ -24,6 +24,8 @@ Docker Desktop:
 1. On Mac OS: Go to settings and make sure "Use Rosetta for x86/amd64 emulation on Apple Silicon" and "Use Virtualization Framework" are enabled.
 1. Restart docker desktop
 1. Make sure the docker engine is running.
+2. Can you execute this?  
+`> docker run hello-world`
 
 Install Git:
 1. Download and install git: https://git-scm.com/ 
